@@ -120,6 +120,11 @@ export default class P5GPT {
 		});
 
 		console.log(res);
-		return res.data.choices[0].message.content;
+		let content = res.data.choices[0].message.content;
+		this.messages.push({
+			role: "assistant",
+			content: content,
+		});
+		return content;
 	}
 }
