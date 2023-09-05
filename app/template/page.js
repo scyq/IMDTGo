@@ -77,7 +77,6 @@ export default function Template() {
 						inputProps={ariaLabel}
 						onChange={(e) => {
 							prompt = `${rolePrompt} 用户：'''${e.target.value}''' 你：`;
-							prompt = e.target.value;
 						}}
 						multiline
 						variant="outlined"
