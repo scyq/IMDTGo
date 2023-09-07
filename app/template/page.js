@@ -85,7 +85,7 @@ export default function Template() {
 					<Button
 						onClick={() => {
 							setOpen(true);
-							agent.single(prompt).then((res) => {
+							agent.dialog(prompt).then((res) => {
 								setOpen(false);
 								setRes(res);
 							});
