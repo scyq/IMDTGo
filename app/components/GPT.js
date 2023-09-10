@@ -1,6 +1,6 @@
 const axios = require("axios").default;
 
-const KEY = "KEY";
+const KEY = "sb-e5c96bbf92a0296c0ec642f479f72feadf87c84938f0622a";
 
 export default class P5GPT {
 	messages = [];
