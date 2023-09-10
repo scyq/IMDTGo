@@ -1,6 +1,6 @@
 const axios = require("axios").default;
 
-const KEY = "输入给定的KEY";
+const KEY = "";
 
 export default class P5GPT {
 	messages = [];
