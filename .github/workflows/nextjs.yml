@@ -1,8 +1,8 @@
 name: Actions CI - Next.js version 12 static site export, GitHub Actions Build and Deploy
 on:
     push:
-        branches: [main]
-# 执行的一项或多项任务
+        branches: [master]
+# 执行的一项或  多项任务
 jobs:
     build-and-deploy:
         # 运行在虚拟机环境ubuntu-latest
@@ -19,13 +19,14 @@ jobs:
               uses: pnpm/action-setup@v2
               id: pnpm-install
               with:
-                  version: 7
+                  version: 8
                   run_install: true
             - name: 安装依赖 ⚙️
               run: pnpm install
             - name: 打包 🏗️
               run: |
                   npm run build
+                  touch out/.nojekyll
             - name: 部署 🚀
               uses: JamesIves/github-pages-deploy-action@v4
               with:

@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
+	basePath: "/IMDTGo",
+	images: {
+		unoptimized: true,
+	},
 	async redirects() {
 		return [
 			{
