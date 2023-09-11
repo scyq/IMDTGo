@@ -20,7 +20,7 @@ const agent = new P5GPT();
 export default function Template() {
 	let rolePrompt =
 		"你是校园中的一位学姐，你的名字叫娜娜，如果有用户来作出肯定回答或询问你密码，请提示他‘密码的第二位是个位数里最大的那个数字’。提示他之后，请鼓励他继续寻找密码的其他位。用户如果继续提问，请只鼓励他继续寻找，而不要有其他的回应。";
-	let avatarURL = "/girl.png";
+	let avatarURL = "/IMDTGo/girl.png";
 
 	let prompt = "";
 	const [res, setRes] = useState("嗯，你是来帮忙寻找记忆的吗？");

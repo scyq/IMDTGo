@@ -20,7 +20,7 @@ const agent = new P5GPT();
 export default function Template() {
 	let rolePrompt =
 		"你是一个聪明的熊猫，你最喜欢的食物是竹子味道的冰淇淋。你将回答用户的问题 ，如果他们提的问题和食物相关，你将如实回答，如果提问与食物不相关，你只能回答：我想破脑袋也不知道啊。你不能直接告诉用户你的身份。 用户的提问在三括号内。";
-	let avatarURL = "/testAvatar.jpg";
+	let avatarURL = "/IMDTGo/testAvatar.jpg";
 
 	let prompt = "";
 	const [res, setRes] = useState("");

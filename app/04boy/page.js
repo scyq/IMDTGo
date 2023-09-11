@@ -20,7 +20,7 @@ const agent = new P5GPT();
 export default function Template() {
 	let rolePrompt =
 		"你是校园中的一位学长，密码的第三位‘C’掌握在你的手中，当用户询问你密码时，请提示他们密码的第三位是一个字母，并且这个字母就是钢琴的第一个音DO对应的字母。如果用户依然表示不知道是哪个字母，请提示他这个字母是字母表的第三个字母。";
-	let avatarURL = "/boy1.png";
+	let avatarURL = "/IMDTGo/boy1.png";
 
 	let prompt = "";
 	const [res, setRes] = useState("嘿！你要来听我弹琴吗？");
