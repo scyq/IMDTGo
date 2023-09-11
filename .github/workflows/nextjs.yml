@@ -2,7 +2,6 @@ name: Actions CI - Next.js version 12 static site export, GitHub Actions Build a
 on:
     push:
         branches: [master]
-# 执行的一项或  多项任务
 jobs:
     build-and-deploy:
         runs-on: ubuntu-latest
