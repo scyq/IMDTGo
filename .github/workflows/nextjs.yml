@@ -1,4 +1,4 @@
-name: Actions CI - Next.js version 12 static site export, GitHub Actions Build and Deploy
+name: Actions CI GitHub Actions Build and Deploy
 on:
     push:
         branches: [master]
