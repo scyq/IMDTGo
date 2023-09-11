@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-// next
 const nextConfig = {
 	basePath: "/IMDTGo",
 	images: {
