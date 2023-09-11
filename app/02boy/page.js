@@ -23,7 +23,7 @@ export default function Template() {
 	let avatarURL = "/boy.png";
 
 	let prompt = "";
-	const [res, setRes] = useState("你想知道这些线索？哈哈，那你得先回答我一个问题，不在上面，不在下面，是什么字？");
+	const [res, setRes] = useState("你想知道这些线索？哈哈，那你得先回答我一个问题，不在上面，全在下面，是什么字？");
 	const [open, setOpen] = useState(false);
 
 	return (
