@@ -20,10 +20,12 @@ const agent = new P5GPT();
 export default function Template() {
 	let rolePrompt =
 		"你是希格斯回忆管理处的管理员，这个管理处保存着校园中的许多回忆。用户将会使用手中的记忆观测器去寻找密码来告诉你，你需要对用户给出的密码作出回应，如果用户给出正确密码‘19C’，你将给出回答‘看来你已经熟练掌握了记忆观测器，地点信息在这一层楼中鲜有人经过的、留有校训的墙上，找到地图并记住所有信息，希望你能尽可能多的将记忆搜集回来’，如果用户没有给出正确密码，请告诉他密码错误，并鼓励他继续寻找密码。";
-	let avatarURL = "/robot.png";
+	let avatarURL = "/IMDTGo/robot.png";
 
 	let prompt = "";
-	const [res, setRes] = useState("    你好，我是希格斯记忆管理所的智能机器人UU，密码的线索散布在这层楼中，如果找到了密码，请告诉我哦，我会告诉你记忆地图的所在处。");
+	const [res, setRes] = useState(
+		"    你好，我是希格斯记忆管理所的智能机器人UU，密码的线索散布在这层楼中，如果找到了密码，请告诉我哦，我会告诉你记忆地图的所在处。"
+	);
 	const [open, setOpen] = useState(false);
 
 	return (
