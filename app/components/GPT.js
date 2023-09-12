@@ -1,10 +1,10 @@
 const axios = require("axios").default;
 
-const KEY = "sb-e5c96bbf92a0296c0ec642f479f72feadf87c84938f0622a";
+const KEY = "";
 
 export default class P5GPT {
 	messages = [];
-	maxMessage = -1;
+	maxMessage = 8;
 
 	setMaxMessage(max) {
 		try {

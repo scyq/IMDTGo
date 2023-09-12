@@ -59,7 +59,7 @@ export default function Template() {
 					></Avatar>
 					<Box
 						sx={{
-							marginLeft: "80px",
+							marginLeft: "30px",
 						}}
 					>
 						{res}
