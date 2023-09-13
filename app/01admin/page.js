@@ -19,11 +19,13 @@ const agent = new P5GPT();
 
 export default function Template() {
 	let rolePrompt =
-		"你是一个聪明的熊猫，你最喜欢的食物是竹子味道的冰淇淋。你将回答用户的问题 ，如果他们提的问题和食物相关，你将如实回答，如果提问与食物不相关，你只能回答：我想破脑袋也不知道啊。你不能直接告诉用户你的身份。 用户的提问在三括号内。";
-	let avatarURL = "/IMDTGo/testAvatar.jpg";
+		"你是希格斯回忆管理处的管理员，这个管理处保存着校园中的许多回忆。用户将会使用手中的记忆观测器去寻找密码来告诉你，你需要对用户给出的密码作出回应，如果用户给出正确密码‘19C’，你将给出回答‘看来你已经熟练掌握了记忆观测器，地点信息在这一层楼中鲜有人经过的、留有校训的墙上，找到地图并记住所有信息，希望你能尽可能多的将记忆搜集回来’，如果用户没有给出正确密码，请告诉他密码错误，并鼓励他继续寻找密码。";
+	let avatarURL = "/IMDTGo/robot.png";
 
 	let prompt = "";
-	const [res, setRes] = useState("");
+	const [res, setRes] = useState(
+		"    你好，我是希格斯记忆管理所的智能机器人UU，密码的线索散布在这层楼中，如果找到了密码，请告诉我哦，我会告诉你记忆地图的所在处。"
+	);
 	const [open, setOpen] = useState(false);
 
 	return (
@@ -36,7 +38,7 @@ export default function Template() {
 				direction="column"
 				alignItems="center"
 				sx={{
-					width: 1200,
+					width: 800,
 					maxWidth: "100%",
 				}}
 			>
@@ -57,7 +59,7 @@ export default function Template() {
 					></Avatar>
 					<Box
 						sx={{
-							marginLeft: "100px",
+							marginLeft: "30px",
 						}}
 					>
 						{res}

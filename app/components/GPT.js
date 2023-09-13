@@ -1,6 +1,6 @@
 const axios = require("axios").default;
 
-const KEY = "";
+const KEY = "sb-e5c96bbf92a0296c0ec642f479f72feadf87c84938f0622a";
 
 export default class P5GPT {
 	messages = [];
@@ -24,7 +24,8 @@ export default class P5GPT {
 			method: "post",
 			url: "https://api.openai-sb.com/v1/chat/completions",
 			headers: {
-				Authorization: `Bearer ${KEY}`,
+				// Authorization: `Bearer ${KEY}`,
+				Authorization: "Bearer sb-e5c96bbf92a0296c0ec642f479f72feadf87c84938f0622a",
 				"Content-Type": "application/json",
 			},
 			data: JSON.stringify({
@@ -109,7 +110,8 @@ export default class P5GPT {
 			method: "post",
 			url: "https://api.openai-sb.com/v1/chat/completions",
 			headers: {
-				Authorization: `Bearer ${KEY}`,
+				// Authorization: `Bearer ${KEY}`,
+				Authorization: "Bearer sb-e5c96bbf92a0296c0ec642f479f72feadf87c84938f0622a",
 				"Content-Type": "application/json",
 			},
 			data: JSON.stringify({

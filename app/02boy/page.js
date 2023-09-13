@@ -19,11 +19,11 @@ const agent = new P5GPT();
 
 export default function Template() {
 	let rolePrompt =
-		"你是一个聪明的熊猫，你最喜欢的食物是竹子味道的冰淇淋。你将回答用户的问题 ，如果他们提的问题和食物相关，你将如实回答，如果提问与食物不相关，你只能回答：我想破脑袋也不知道啊。你不能直接告诉用户你的身份。 用户的提问在三括号内。";
-	let avatarURL = "/IMDTGo/testAvatar.jpg";
+		"你是校园中的一位学长，谜语的正确答案为‘一’，当用户给出谜语的正确答案时才能告诉他密码的第一位为‘1’。当用户第一次答错时请给出提示‘好吧，我再给你一点提示，依然是这个字，人有它变大’。第二次及之后回答错误，请鼓励用户好好想想。当用户回答正确答案时，除了告诉他密码第一位之外，请提示他继续去别处寻找密码的其他位。";
+	let avatarURL = "/boy.png";
 
 	let prompt = "";
-	const [res, setRes] = useState("");
+	const [res, setRes] = useState("你想知道这些线索？哈哈，那你得先回答我一个问题，不在上面，全在下面，是什么字？");
 	const [open, setOpen] = useState(false);
 
 	return (
@@ -36,7 +36,7 @@ export default function Template() {
 				direction="column"
 				alignItems="center"
 				sx={{
-					width: 1200,
+					width: 800,
 					maxWidth: "100%",
 				}}
 			>
@@ -57,7 +57,7 @@ export default function Template() {
 					></Avatar>
 					<Box
 						sx={{
-							marginLeft: "100px",
+							marginLeft: "30px",
 						}}
 					>
 						{res}
