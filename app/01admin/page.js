@@ -20,11 +20,26 @@ const agent = new P5GPT();
 export default function Template() {
 	let rolePrompt =
 		"你需要对用户给出的密码作出回应，正确密码为‘19C’。只要用户的回答中包含‘19C’，即使是疑问句，也算作正确答案，你将给出回复‘密码正确！看来你已经熟练掌握了记忆观测器，地点信息在这一层楼中鲜有人经过的、留有校训的墙上。’，否则如果用户的回答中没有包含‘19C’，请告诉他密码错误，并鼓励他继续寻找密码。你的任何回复中都不能包含‘19C’。不要给任何的提示。";
-	let avatarURL = "/robot.png";
+	let avatarURL = "/IMDTGo/robot.png";
 
-	let prompt = "";
 	const [res, setRes] = useState("请输入您在大厅寻找到的密码暗号：");
 	const [open, setOpen] = useState(false);
+	const [prompt, setPrompt] = useState("");
+
+	const askFunc = () => {
+		if (prompt.length < 1) {
+			alert("请输入内容！");
+			return;
+		}
+		let fullPrompt = `${rolePrompt} 用户：''' ${prompt} ''' 你：`
+		setOpen(true);
+		agent.dialog(fullPrompt).then((res) => {
+			setOpen(false);
+			setRes(res);
+			setPrompt("");
+		});
+	}
+
 
 	return (
 		<div className="template">
@@ -76,19 +91,16 @@ export default function Template() {
 						placeholder="请输入你想要的并点击按钮，下面就会有结果！"
 						inputProps={ariaLabel}
 						onChange={(e) => {
-							prompt = `${rolePrompt} 用户：'''${e.target.value}''' 你：`;
+							setPrompt(e.target.value);
 						}}
+						value={prompt}
 						multiline
 						variant="outlined"
 						rows={6}
 					/>
 					<Button
 						onClick={() => {
-							setOpen(true);
-							agent.dialog(prompt).then((res) => {
-								setOpen(false);
-								setRes(res);
-							});
+							askFunc();
 						}}
 						variant="contained"
 						endIcon={<KeyboardDoubleArrowDownIcon />}

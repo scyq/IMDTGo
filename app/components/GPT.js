@@ -1,10 +1,10 @@
 const axios = require("axios").default;
 
-const KEY = "sb-e5c96bbf92a0296c0ec642f479f72feadf87c84938f0622a";
-
 export default class P5GPT {
 	messages = [];
 	maxMessage = 8;
+
+	KEY = "sb-e5c96bbf92a0296c0ec642f479f72feadf87c84938f0622a";
 
 	setMaxMessage(max) {
 		try {
@@ -24,8 +24,7 @@ export default class P5GPT {
 			method: "post",
 			url: "https://api.openai-sb.com/v1/chat/completions",
 			headers: {
-				// Authorization: `Bearer ${KEY}`,
-				Authorization: "Bearer sb-e5c96bbf92a0296c0ec642f479f72feadf87c84938f0622a",
+				Authorization: `Bearer ${this.KEY}`,
 				"Content-Type": "application/json",
 			},
 			data: JSON.stringify({
@@ -48,7 +47,7 @@ export default class P5GPT {
 	singleStream(prompt) {
 		const res = fetch("https://api.openai-sb.com/v1/chat/completions", {
 			headers: {
-				Authorization: `Bearer ${KEY}`,
+				Authorization: `Bearer ${this.KEY}`,
 				"Content-Type": "application/json",
 			},
 			method: "POST",
@@ -92,6 +91,7 @@ export default class P5GPT {
 	}
 
 	async dialog(prompt) {
+
 		this.messages.push({
 			role: "user",
 			content: prompt,
@@ -110,8 +110,7 @@ export default class P5GPT {
 			method: "post",
 			url: "https://api.openai-sb.com/v1/chat/completions",
 			headers: {
-				// Authorization: `Bearer ${KEY}`,
-				Authorization: "Bearer sb-e5c96bbf92a0296c0ec642f479f72feadf87c84938f0622a",
+				Authorization: `Bearer ${this.KEY}`,
 				"Content-Type": "application/json",
 			},
 			data: JSON.stringify({
