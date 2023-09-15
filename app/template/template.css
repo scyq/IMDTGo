@@ -6,3 +6,12 @@
 	justify-content: center;
 	align-items: center;
 }
+
+.main {
+	width: 90%;
+}
+
+.avatar {
+	width: 30vw;
+	height: 30vw;
+}

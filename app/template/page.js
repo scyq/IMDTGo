@@ -52,10 +52,7 @@ export default function Template() {
         spacing={4}
         direction="column"
         alignItems="center"
-        sx={{
-          width: 1200,
-          maxWidth: "100%",
-        }}
+        className="main"
       >
         <Stack
           direction="row"
@@ -64,14 +61,7 @@ export default function Template() {
             width: "100%",
           }}
         >
-          <Avatar
-            sx={{
-              width: "10vw",
-              height: "10vw",
-            }}
-            alt="Avatar"
-            src={avatarURL}
-          ></Avatar>
+          <Avatar className="avatar" alt="Avatar" src={avatarURL}></Avatar>
           <Box
             sx={{
               marginLeft: "100px",
@@ -98,7 +88,7 @@ export default function Template() {
             value={prompt}
             multiline
             variant="outlined"
-            rows={6}
+            rows={4}
           />
           <Button
             onClick={() => {
